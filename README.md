@@ -17,8 +17,7 @@
 ### 동영상 강의
 
 * https://wikibook.github.io/react/react.html
-
-
+* https://youtube.com/playlist?list=PLuHgQVnccGMCRv6f8H9K5Xwsdyg4sFSdi
 
 
 
@@ -40,6 +39,8 @@
 
 
 
-### 예제 코드
 
-* [code](code)
+
+## 의견
+
+* 
