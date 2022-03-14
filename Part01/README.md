@@ -13,10 +13,10 @@
 1. [자바스크립트 코딩하는 법](07)
 1. [CSS 코딩하는 법](08)
 1. [배포하는 법](09)
-1. 리액트가 없다면?
-1. 컴포넌트 만들기
-1. props
-1. React Developer Tools
+1. [리액트가 없다면?](10)
+1. [컴포넌트 만들기](11)
+1. [props](12)
+1. [React Developer Tools](13)
 1. 컴포넌트를 파일로 분리하기
 1. state
 1. 이벤트 state props와 render 함수
