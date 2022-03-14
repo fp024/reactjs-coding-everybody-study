@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class TOC extends Component {
   render() {
+    console.log('TOC render');
     const lists = this.props.data.map((content) => {
       return (
         <li key={content.id}>

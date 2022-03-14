@@ -19,7 +19,7 @@
 1. [React Developer Tools](13)
 1. [컴포넌트를 파일로 분리하기](14)
 1. [state](15)
-1. 이벤트 state props와 render 함수
+1. [이벤트 state props와 render 함수](16)
 1. 컴포넌트 이벤트 만들기
 1. 베이스 캠프
 1. Create 구현
