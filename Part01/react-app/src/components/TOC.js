@@ -6,7 +6,15 @@ class TOC extends Component {
     const lists = this.props.data.map((content) => {
       return (
         <li key={content.id}>
-          <a href={'/content/' + content.id}>{content.title}</a>
+          <a
+            href={'/content/' + content.id}
+            onClick={function (e) {
+              e.preventDefault();
+              this.props.onChangePage(content.id);
+            }.bind(this)}
+          >
+            {content.title}
+          </a>
         </li>
       );
     });
