@@ -11,7 +11,7 @@ class App extends Component {
       mode: 'welcome',
       subject: { title: 'WEB', sub: 'World Wid Web!' },
       welcome: { title: 'Welcome', desc: 'Hello, React!!' },
-      contentIndex: 0,
+      contentId: 0,
       contents: [
         { id: 1, title: 'HTML', desc: 'HTML is for information' },
         { id: 2, title: 'CSS', desc: 'CSS is for design' },
@@ -29,8 +29,9 @@ class App extends Component {
       _title = this.state.welcome.title;
       _desc = this.state.welcome.desc;
     } else if (this.state.mode === 'read') {
-      _title = this.state.contents[this.state.contentIndex].title;
-      _desc = this.state.contents[this.state.contentIndex].desc;
+      let content = this.state.contents.find((content) => content.id === this.state.contentId);
+      _title = content.title;
+      _desc = content.desc;
     }
     console.log('render', this);
     return (
@@ -44,7 +45,7 @@ class App extends Component {
         />
         <TOC
           onChangePage={function (id) {
-            this.setState({ mode: 'read', contentIndex: id - 1 });
+            this.setState({ mode: 'read', contentId: Number(id) });
           }.bind(this)}
           data={this.state.contents}
         />
