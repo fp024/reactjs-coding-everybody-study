@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 
 class TOC extends Component {
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    console.log('===> TOC render shouldComponentUpdate');
+    if (this.props.data === nextProps.data) {
+      return false;
+    }
+    return true;
+  }
+
   render() {
-    console.log('TOC render');
+    console.log('===> TOC render');
     const lists = this.props.data.map((content) => {
       return (
         <li key={content.id}>
