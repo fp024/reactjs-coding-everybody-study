@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class TOC extends Component {
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     console.log('===> TOC render shouldComponentUpdate');
+    console.log('this.props.data: ', this.props.data);
+    console.log('nextProps.data: ', nextProps.data);
     if (this.props.data === nextProps.data) {
       return false;
     }
