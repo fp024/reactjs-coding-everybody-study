@@ -86,7 +86,7 @@ class App extends Component {
           title={this.state.subject.title}
           sub={this.state.subject.sub}
           onChangePage={function () {
-            this.setState({ mode: 'welcome' });
+            this.setState({ mode: 'welcome', contentId: 0 });
           }.bind(this)}
         />
         <TOC
@@ -97,7 +97,30 @@ class App extends Component {
         />
         <Control
           onChangeMode={function (_mode) {
-            this.setState({ mode: _mode });
+            if (_mode !== 'create' && this.state.contentId === 0) {
+              alert('Please select a subject first.');
+              this.setState({ mode: 'welcome' });
+            } else if (_mode === 'delete') {
+              if (window.confirm('really?')) {
+                /*
+                const afterDeletedContents = Array.from(this.state.contents);
+                for (let i = 0; i < afterDeletedContents.length; i++) {
+                  if (afterDeletedContents[i].id === this.state.contentId) {
+                    afterDeletedContents.splice(i, 1);
+                    break;
+                  }
+                }
+                */
+                // 필터로도 사용해봤음.
+                const afterDeletedContents = this.state.contents.filter(
+                  (c) => c.id !== this.state.contentId,
+                );
+
+                this.setState({ contents: afterDeletedContents, mode: 'welcome', contentId: 0 });
+              }
+            } else {
+              this.setState({ mode: _mode });
+            }
           }.bind(this)}
         />
         {this.getContent()}
