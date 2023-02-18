@@ -1,1 +1,5 @@
-/* 코드 모두 제거 */
+.container {
+  border: 5px solid red;
+  margin: 5px;
+  padding: 5px;
+}
