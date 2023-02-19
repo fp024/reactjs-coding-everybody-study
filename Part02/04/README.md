@@ -145,9 +145,49 @@ function FuncComp(props) {
 
 * 동영상: https://youtu.be/LgEJlKfHJW0
 
+* useEffect
+  * 함수형 콤퍼넌트가 실행된 후에 추가로 필요한 작업을 처리할 수 있게 해주는 훅
 
+실행을 한번 해봤을 때..
 
+1. func => render 1 
+2. func => useEffect 2 
 
+render 다음에 useEffect가 바로 호출 되는 것을 알 수 있음.
+
+* componentWillMount나 componentDidUpdate와 효과가 같음.
+
+* 최초 랜더링 될 때 한번, 그후 랜더링 될 때마다 호출
+
+* 여러개를 설정할 수도 있음.
+
+  ```react
+  const funcStyle = 'color:yellow';
+  let funcId = 0;
+  
+  function FuncComp(props) {
+    ...
+  
+    useEffect(() => {
+      console.log(`%cfunc => useEffect A ${++funcId} `, funcStyle);
+      document.title = `${number} : ${date}`;
+    });
+  
+    useEffect(() => {
+      console.log(`%cfunc => useEffect B ${++funcId} `, funcStyle);
+      document.title = `${number} : ${date}`;
+    });
+  
+    console.log(`%cfunc => render ${++funcId} `, funcStyle);
+    return (
+      ...
+    );
+  }
+  ```
+
+  
+
+  
 
 ### 4-4 함수에서 라이프사이클 구현하기 - clean up
 

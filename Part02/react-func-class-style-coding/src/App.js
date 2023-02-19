@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -17,6 +17,16 @@ let funcId = 0;
 function FuncComp(props) {
   const [number, setNumber] = useState(props.initNumber);
   const [date, setDate] = useState(props.date);
+
+  useEffect(() => {
+    console.log(`%cfunc => useEffect A ${++funcId} `, funcStyle);
+    document.title = `${number} : ${date}`;
+  });
+
+  useEffect(() => {
+    console.log(`%cfunc => useEffect B ${++funcId} `, funcStyle);
+    document.title = `${number} : ${date}`;
+  });
 
   console.log(`%cfunc => render ${++funcId} `, funcStyle);
   return (
