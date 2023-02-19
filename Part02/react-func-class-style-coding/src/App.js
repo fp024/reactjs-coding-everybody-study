@@ -19,13 +19,18 @@ function FuncComp(props) {
   const [date, setDate] = useState(props.date);
 
   useEffect(() => {
-    console.log(`%cfunc => useEffect A ${++funcId} `, funcStyle);
+    console.log(
+      `%cfunc => useEffect (componentDidMount & componentDidUpdate) ${++funcId} `,
+      funcStyle,
+    );
     document.title = `${number} : ${date}`;
-  });
-
-  useEffect(() => {
-    console.log(`%cfunc => useEffect B ${++funcId} `, funcStyle);
-    document.title = `${number} : ${date}`;
+    return () => {
+      // useEffect가 다시 실행될 때 정리하는 코드를 넣으면 됨.. componentWillUnmount() 부류
+      console.log(
+        `%cfunc => useEffect return(componentDidMount & componentDidUpdate) ${++funcId} `,
+        funcStyle,
+      );
+    };
   });
 
   console.log(`%cfunc => render ${++funcId} `, funcStyle);

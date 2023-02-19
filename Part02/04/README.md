@@ -193,6 +193,33 @@ render 다음에 useEffect가 바로 호출 되는 것을 알 수 있음.
 
 * 동영상: https://youtu.be/s_i7yi8W3z8
 
+useEffect에서 return을 반환하게 작성해줌.
+
+```javascript
+  useEffect(() => {
+    console.log(
+      `%cfunc => useEffect (componentDidMount & componentDidUpdate) ${++funcId} `,
+      funcStyle,
+    );
+    document.title = `${number} : ${date}`;
+    return () => {
+      // useEffect가 다시 실행될 때 정리하는 코드를 넣으면 됨.. componentWillUnmount() 부류
+      console.log(
+        `%cfunc => useEffect return(componentDidMount & componentDidUpdate) ${++funcId} `,
+        funcStyle,
+      );
+    };
+  });
+```
+
+
+
+1. func => render 1    // 랜더링
+2. func => useEffect (componentDidMount & componentDidUpdate) 2  // 랜더링 후 수행 1
+3. func => render 3   // state를 변경
+4. func => useEffect return(componentDidMount & componentDidUpdate) 4    // clean up 작업 수행 (componentWillUnmount() 역할)
+5. func => useEffect (componentDidMount & componentDidUpdate) 5 // 랜더링 후 수행 2
+
 
 
 
