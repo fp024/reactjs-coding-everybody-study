@@ -2,12 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, NavLink, useParams } from 'react-router-dom';
 
-function TopicContent(props) {
+const contents = [
+  { id: 1, title: 'HTML', description: 'HTML is...' },
+  { id: 2, title: 'JS', description: 'JS is...' },
+  { id: 3, title: 'React', description: 'React is...' },
+];
+
+function Topic() {
+  const params = useParams();
+  const topic_id = params.topic_id;
+  const not_found_topic = {
+    title: 'Sorry',
+    description: 'Not Found',
+  };
+
+  const found_topic = contents.find((c) => c.id === Number(topic_id));
+  const selected_topic = found_topic === undefined ? not_found_topic : found_topic;
+
+  console.log(topic_id);
   return (
     <div>
-      <h3>{props.content}</h3>
+      <h3>{selected_topic.title}</h3>
+      {selected_topic.description}
     </div>
   );
 }
@@ -24,12 +42,6 @@ function Home() {
 function Topics() {
   const LIs = [];
 
-  const contents = [
-    { id: 1, title: 'HTML', description: 'HTML is...' },
-    { id: 2, title: 'JS', description: 'JS is...' },
-    { id: 3, title: 'React', description: 'React is...' },
-  ];
-
   contents.forEach((c) => {
     LIs.push(
       <li key={c.id}>
@@ -43,9 +55,7 @@ function Topics() {
       <h2>Topics</h2>
       <ul>{LIs}</ul>
       <Routes>
-        <Route path="1" element={<TopicContent content="HTML is..." />} />
-        <Route path="2" element={<TopicContent content="JS is..." />} />
-        <Route path="3" element={<TopicContent content="React is..." />} />
+        <Route path=":topic_id" element={<Topic />} /> {/* 여기는 앞 경로를 빼줘야함. ? */}
       </Routes>
     </div>
   );

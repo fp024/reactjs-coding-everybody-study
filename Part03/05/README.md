@@ -13,17 +13,35 @@
 
 ### 
 
-
-
-
-
-
-
-
-
 ## 의견
 
-* 
+* 뭔가 안된다 싶으면 상대경로로 바꿔보면 잘되는 부분이 있음.. 😅
+
+  ```react
+  function Topics() {
+    const LIs = [];
+  
+    contents.forEach((c) => {
+      LIs.push(
+        <li key={c.id}>
+          <NavLink to={`/topics/${c.id}`}>{c.title}</NavLink>
+        </li>,
+      );
+    });
+  
+    return (
+      <div>
+        <h2>Topics</h2>
+        <ul>{LIs}</ul>
+        <Routes>
+          <Route path=":topic_id" element={<Topic />} /> {/* 여기는 앞 경로를 빼줘야함. ? (상대 경로 사용필요) */}
+        </Routes>
+      </div>
+    );
+  }
+  ```
+
+  
 
 
 
