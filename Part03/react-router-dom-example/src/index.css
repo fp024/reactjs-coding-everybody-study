@@ -1,1 +1,4 @@
-/* 코드 모두 제거 */
+.active {
+  background-color: tomato;
+  text-decoration: none;
+}

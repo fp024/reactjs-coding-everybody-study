@@ -4,7 +4,7 @@
 
 ## 03. Router
 
-* 프로젝트 디렉토리: 
+* 프로젝트 디렉토리: [react-router-dom-example](../react-router-dom-example)
 
 * 동영상 강의: https://www.youtube.com/watch?v=WLdbsl9UwDc?t=495
 
