@@ -4,6 +4,8 @@
 
 ## 01. 수업 소개
 
+* 프로젝트 디렉토리: [react-ajax](../react-ajax)
+
 * 동영상 강의: https://www.youtube.com/watch?v=5suKe4QxkjI
 
    
