@@ -20,10 +20,10 @@ function FuncComp(props) {
 
   useEffect(() => {
     console.log(
-      `%cfunc => useEffect (componentDidMount & componentDidUpdate) ${++funcId} `,
+      `%cfunc => useEffect number (componentDidMount & componentDidUpdate) ${++funcId} `,
       funcStyle,
     );
-    document.title = `${number} : ${date}`;
+    document.title = number;
     return () => {
       // useEffect가 다시 실행될 때 정리하는 코드를 넣으면 됨.. componentWillUnmount() 부류
       console.log(
@@ -31,7 +31,7 @@ function FuncComp(props) {
         funcStyle,
       );
     };
-  });
+  }, [number]);
 
   console.log(`%cfunc => render ${++funcId} `, funcStyle);
   return (
