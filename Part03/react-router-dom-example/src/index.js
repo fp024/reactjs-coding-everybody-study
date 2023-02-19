@@ -22,20 +22,26 @@ function Home() {
 }
 
 function Topics() {
+  const LIs = [];
+
+  const contents = [
+    { id: 1, title: 'HTML', description: 'HTML is...' },
+    { id: 2, title: 'JS', description: 'JS is...' },
+    { id: 3, title: 'React', description: 'React is...' },
+  ];
+
+  contents.forEach((c) => {
+    LIs.push(
+      <li key={c.id}>
+        <NavLink to={`/topics/${c.id}`}>{c.title}</NavLink>
+      </li>,
+    );
+  });
+
   return (
     <div>
       <h2>Topics</h2>
-      <ul>
-        <li>
-          <NavLink to="1">HTML</NavLink>
-        </li>
-        <li>
-          <NavLink to="2">JS</NavLink>
-        </li>
-        <li>
-          <NavLink to="3">React</NavLink>
-        </li>
-      </ul>
+      <ul>{LIs}</ul>
       <Routes>
         <Route path="1" element={<TopicContent content="HTML is..." />} />
         <Route path="2" element={<TopicContent content="JS is..." />} />
