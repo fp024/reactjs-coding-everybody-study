@@ -29,11 +29,16 @@
     }
 
     fetch('list').then((response)=>{
-      response.text().then((text)=>{
-        document.querySelector('#nav').innerHTML = text;
+      response.text().then((text)=>{        
+        document.querySelector('#nav').innerHTML = 
+          text.split(',')
+            .map((i) => {
+              const topic = i.trim();
+                return `<li><a href='#!${topic}' onclick="fetchPage('${topic}')">${topic}</a></li>`;
+              }
+            ).join('');
       })
     });
-
   </script>
 </body>
 </html>
