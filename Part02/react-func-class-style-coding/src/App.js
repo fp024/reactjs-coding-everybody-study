@@ -14,7 +14,6 @@ function App() {
 function FuncComp(props) {
   const [number, setNumber] = useState(props.initNumber);
   const [date, setDate] = useState(props.date);
-
   return (
     <div className="container">
       <h2>function style component</h2>
@@ -38,13 +37,43 @@ function FuncComp(props) {
   );
 }
 
+const classStyle = 'color:red';
 class ClassComp extends Component {
+  constructor(props) {
+    super(props);
+    console.log('%cclass => constructor', classStyle);
+  }
+
   state = {
     number: this.props.initNumber,
     date: this.props.date,
   };
 
+  // React 17 이상 부터 사용 불가
+  // componentWillMount는 deprecated ::: componentDidMount 또는 생성자에서 초기화할 것.
+  componentWillMount() {
+    console.log('%cclass => componentWillMount', classStyle);
+  }
+
+  componentDidMount() {
+    console.log('%cclass => componentDidMount', classStyle);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('%cclass => shouldComponentUpdate', classStyle);
+    return true;
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    console.log('%cclass => componentWillUpdate', classStyle);
+  }
+
+  componentDidUpdate(nextProps, nextState) {
+    console.log('%cclass => componentDidUpdate', classStyle);
+  }
+
   render() {
+    console.log('%cclass => render', classStyle);
     return (
       <div className="container">
         <h2>class style component</h2>
