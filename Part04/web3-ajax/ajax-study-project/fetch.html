@@ -24,10 +24,6 @@
       })
     })    
     */
-    // Asynchronous
-    function callbackMe() {
-      console.log('response end');
-    }
     fetch(type, {
        cache:'no-store' // 최초 호출 이후에는 304가 되는데, 캐시 설정을 no-store로 바꾸면 200으로 설정된다.
     }).then(function (response) {
