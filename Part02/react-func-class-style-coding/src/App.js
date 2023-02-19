@@ -27,11 +27,26 @@ function FuncComp(props) {
     return () => {
       // useEffect가 다시 실행될 때 정리하는 코드를 넣으면 됨.. componentWillUnmount() 부류
       console.log(
-        `%cfunc => useEffect return(componentDidMount & componentDidUpdate) ${++funcId} `,
+        `%cfunc => useEffect number return (componentDidMount & componentDidUpdate) ${++funcId} `,
         funcStyle,
       );
     };
   }, [number]);
+
+  useEffect(() => {
+    console.log(
+      `%cfunc => useEffect date (componentDidMount & componentDidUpdate) ${++funcId} `,
+      funcStyle,
+    );
+    document.title = date;
+    return () => {
+      // useEffect가 다시 실행될 때 정리하는 코드를 넣으면 됨.. componentWillUnmount() 부류
+      console.log(
+        `%cfunc => useEffect date return (componentDidMount & componentDidUpdate) ${++funcId} `,
+        funcStyle,
+      );
+    };
+  }, [date]);
 
   console.log(`%cfunc => render ${++funcId} `, funcStyle);
   return (

@@ -230,6 +230,62 @@ useEffect에서 return을 반환하게 작성해줌.
 
 
 
+Effect를 건너 띄어 성능 최적화하기
+
+* https://reactjs.org/docs/hooks-effect.html
+
+성능을 위해 Effect가 호출되는 것을 생략하는 기법
+
+
+
+1. func => render 1 // 처음 랜더링
+2. func => useEffect number (componentDidMount & componentDidUpdate) 2
+3. func => useEffect date (componentDidMount & componentDidUpdate) 3
+4. func => render 4 // random 버튼 클릭
+5. func => useEffect number return (componentDidMount & componentDidUpdate) 5
+6. func => useEffect number (componentDidMount & componentDidUpdate) 6
+7. func => render 7 // date 버튼 클릭
+8. func => useEffect date return (componentDidMount & componentDidUpdate) 8
+9. func => useEffect date (componentDidMount & componentDidUpdate) 9
+
+useEffect() 함수의 두번째 파라미터에 적용할 state의 특정 변수를 배열에 담아 넘겨주면 그것이 바뀔 때만 실행됨.
+
+```react
+  useEffect(() => {
+    console.log(
+      `%cfunc => useEffect number (componentDidMount & componentDidUpdate) ${++funcId} `,
+      funcStyle,
+    );
+    document.title = number;
+    return () => {
+      console.log(
+        `%cfunc => useEffect number return (componentDidMount & componentDidUpdate) ${++funcId} `,
+        funcStyle,
+      );
+    };
+  }, [number]); // 변경 대상 state의 변수를 배열에 담아 전달 - number
+
+  useEffect(() => {
+    console.log(
+      `%cfunc => useEffect date (componentDidMount & componentDidUpdate) ${++funcId} `,
+      funcStyle,
+    );
+    document.title = date;
+    return () => {
+      console.log(
+        `%cfunc => useEffect date return (componentDidMount & componentDidUpdate) ${++funcId} `,
+        funcStyle,
+      );
+    };
+  }, [date]); // 변경 대상 state의 변수를 배열에 담아 전달 - date
+```
+
+
+
+
+
+
+
 
 
 
