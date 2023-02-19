@@ -43,7 +43,10 @@
 
 ---
 
-## 07. 
+## 07. WEB3-Ajax-5.1.fetch API-요청과 응답
+
+* https://youtu.be/qy3M0Cp0ios
+* 
 
 ---
 

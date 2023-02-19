@@ -16,11 +16,20 @@
       value="fetch"
       onclick="
     const type = document.querySelector('input[name=type]:checked').value;
+    /*
     fetch(type).then((response)=>{
       response.text().then((text)=>{
         document.querySelector('article').innerHTML = text;
       })
-    })
+    })    
+    */
+    // Asynchronous
+    function callbackMe() {
+      console.log('response end');
+    }
+    fetch(type).then(callbackMe);
+    console.log('1');
+    console.log('2');
     "
     />
   </body>
