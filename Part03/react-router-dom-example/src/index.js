@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function Home() {
   return (
     <div>
-      <h1>Home</h1>
+      <h2>Home</h2>
       Home...
     </div>
   );
@@ -31,13 +31,35 @@ function Contact() {
   );
 }
 
+function NotFound() {
+  return (
+    <div>
+      <h2>Not Found</h2>
+    </div>
+  );
+}
+
 function App() {
   return (
     <div>
       <h1>Hello React Router DOM</h1>
-      <Home></Home>
-      <Topics></Topics>
-      <Contact></Contact>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/topics">Topics</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/topics" element={<Topics />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
