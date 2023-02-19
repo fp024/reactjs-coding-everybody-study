@@ -11,9 +11,14 @@ function App() {
   );
 }
 
+const funcStyle = 'color:yellow';
+let funcId = 0;
+
 function FuncComp(props) {
   const [number, setNumber] = useState(props.initNumber);
   const [date, setDate] = useState(props.date);
+
+  console.log(`%cfunc => render ${++funcId} `, funcStyle);
   return (
     <div className="container">
       <h2>function style component</h2>

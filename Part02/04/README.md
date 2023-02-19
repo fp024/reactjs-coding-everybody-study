@@ -122,6 +122,21 @@ random 버튼을 클릭했을 때...
 
 * 동영상: https://youtu.be/cJFLZUV4iLs
 
+render 함수 내에 console.log 추가함.
+
+```react
+const funcStyle = 'color:yellow';
+let funcId = 0; // render()가 호출될 때마다 증가..
+
+function FuncComp(props) {
+  ...
+  console.log(`%cfunc => render ${++funcId} `, funcStyle);
+  return (
+  ...
+  )
+}
+```
+
 
 
 
