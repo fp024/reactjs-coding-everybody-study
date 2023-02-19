@@ -282,9 +282,26 @@ useEffect() 함수의 두번째 파라미터에 적용할 state의 특정 변수
 
 
 
+빈배열을 전달하면 componentDidMount 와 마찬가지로 처음랜더링 되고나서 한번만 호출되는데...
 
+```react
+  useEffect(() => {
+    console.log(`%cfunc => useEffect (componentDidMount) ${++funcId} `, funcStyle);
+    document.title = number;
+    return () => {
+      // useEffect가 다시 실행될 때 정리하는 코드를 넣으면 됨.. componentWillUnmount() 부류
+      console.log(`%cfunc => useEffect return (componentWillUnmount) ${++funcId} `, funcStyle);
+    };
+  }, []); // 빈 배열을 두번째인자로 전달하면 componentDidMount와 같은 효과
+```
 
+이때 eslint 경고가 뜸.
 
+```
+Line 29:6:  React Hook useEffect has a missing dependency: 'number'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+```
+
+number를 아예 사용하지 않으면 없어짐.
 
 
 
@@ -292,7 +309,7 @@ useEffect() 함수의 두번째 파라미터에 적용할 state의 특정 변수
 
 ## 의견
 
-* 
+* 뭔가 복잡하긴 했는데 설명을 잘해주셔서 어느정도 이해는 하였다. 😅
   
   
 

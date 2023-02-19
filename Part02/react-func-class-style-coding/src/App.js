@@ -19,6 +19,15 @@ function FuncComp(props) {
   const [date, setDate] = useState(props.date);
 
   useEffect(() => {
+    console.log(`%cfunc => useEffect (componentDidMount) ${++funcId} `, funcStyle);
+    document.title = number;
+    return () => {
+      // useEffect가 다시 실행될 때 정리하는 코드를 넣으면 됨.. componentWillUnmount() 부류
+      console.log(`%cfunc => useEffect return (componentWillUnmount) ${++funcId} `, funcStyle);
+    };
+  }, []); // 빈 배열을 두번째인자로 전달하면 componentDidMount와 같은 효과
+
+  useEffect(() => {
     console.log(
       `%cfunc => useEffect number (componentDidMount & componentDidUpdate) ${++funcId} `,
       funcStyle,
