@@ -39,14 +39,33 @@
 
 ---
 
-## 08. 
+## 08. WEB3-Ajax-5-2.fetch API-response 객체
+
+* https://youtu.be/IKO8Dy_YsiY
+
+* fetch 요청 응답을 보았을 때, 최초 이외에는 304가 떠서... fetch에 옵션을 주어봤음.
+
+  ```javascript
+      fetch(type, {
+         cache:'no-store' // 최초 호출 이후에는 304가 되는데, 캐시 설정을 no-store로 바꾸면 200으로 설정된다.
+      }).then(function (response) {
+        console.log(response);
+        if(response.status == '404') {
+          alert('File Not Found');
+        }
+      });
+  
+  ```
+
+  
 
 ---
 
 ## 07. WEB3-Ajax-5.1.fetch API-요청과 응답
 
 * https://youtu.be/qy3M0Cp0ios
-* 
+
+  
 
 ---
 

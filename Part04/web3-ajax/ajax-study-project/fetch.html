@@ -9,6 +9,7 @@
       <li>html <input type="radio" name="type" value="html" checked="checked" /></li>
       <li>css <input type="radio" name="type" value="css" /></li>
       <li>javascirpt <input type="radio" name="type" value="javascirpt" /></li>
+      <li>File Not Found <input type="radio" name="type" value="fileNotFound" /></li>
     </ul>
     <article></article>
     <input
@@ -27,7 +28,14 @@
     function callbackMe() {
       console.log('response end');
     }
-    fetch(type).then(callbackMe);
+    fetch(type, {
+       cache:'no-store' // 최초 호출 이후에는 304가 되는데, 캐시 설정을 no-store로 바꾸면 200으로 설정된다.
+    }).then(function (response) {
+      console.log(response);
+      if(response.status == '404') {
+        alert('File Not Found');
+      }
+    });
     console.log('1');
     console.log('2');
     "
