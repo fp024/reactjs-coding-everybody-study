@@ -23,7 +23,12 @@
 
 ---
 
-## 12. 
+## 12. WEB3-Ajax-7.2.초기 페이지 (2/2)
+
+* https://youtu.be/rER7SpywfMM
+* `http://127.0.0.1:5500/index.html#!javascript` 이런식으로 접속했으면 한번에 javascript 화면으로 바꿔야 할 것 같은데.. 파폭에서는 Ctrl + F5로 갱신해야 내용이 바뀌고 크롬에서도 한번에 안바뀜... ? 이유를 잘 모르겠다..
+* 하여튼 요즘은 pjax를 쓴다고함..
+  * https://github.com/MoOx/pjax
 
 ---
 
