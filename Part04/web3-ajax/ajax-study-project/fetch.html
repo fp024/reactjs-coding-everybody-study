@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fetch Test</title>
+  </head>
+  <body>
+    <ul>
+      <li>html <input type="radio" name="type" value="html" checked="checked" /></li>
+      <li>css <input type="radio" name="type" value="css" /></li>
+      <li>javascirpt <input type="radio" name="type" value="javascirpt" /></li>
+    </ul>
+    <article></article>
+    <input
+      type="button"
+      value="fetch"
+      onclick="
+    const type = document.querySelector('input[name=type]:checked').value;
+    fetch(type).then((response)=>{
+      response.text().then((text)=>{
+        document.querySelector('article').innerHTML = text;
+      })
+    })
+    "
+    />
+  </body>
+</html>

@@ -47,7 +47,10 @@
 
 ---
 
-## 06. 
+## 06.  WEB3-Ajax-5.0.fetch API-사용법
+
+* https://youtu.be/ufjCFdG_4fo
+* fetch.html에서 radio버튼 만들어서 선택적으로 가져오는 방법 추가해보았음.
 
 ---
 
