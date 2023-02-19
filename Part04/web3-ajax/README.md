@@ -31,14 +31,19 @@
 
 ---
 
-## 10. 
+## 10. WEB3-Ajax-6.2.리팩토링 함수화
+
+* https://youtu.be/F67A2N5u-JU
+
+
 
 ---
 
 ## 09. WEB3-Ajax-6.1.ajax의 적용
 
 * https://youtu.be/n9OvSZbEi1E
-* 
+
+  
 
 ---
 
