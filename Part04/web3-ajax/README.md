@@ -9,9 +9,18 @@
 
 ## 16. 
 
+
+
+
+
 ---
 
-## 15. 
+## 15. WEB3-Ajax-9.fetch API polyfill
+
+* https://youtu.be/NUqzyFOprMI
+* https://github.com/github/fetch
+* Windows 10 사용중이긴한데... 이제 크로미움기반 MS Edge 사용이 권장되서 의미가 더없어진 것 같다.. IE로 열어도 MS Edge로 열림 😅😅😅
+  * 나중에 구형 컴퓨터, 윈도우 환경에서 해보면 될 것 같음.
 
 ---
 
