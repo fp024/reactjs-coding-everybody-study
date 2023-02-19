@@ -2,7 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter, Route, Routes, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
+
+function TopicContent(props) {
+  return (
+    <div>
+      <h3>{props.content}</h3>
+    </div>
+  );
+}
 
 function Home() {
   return (
@@ -17,7 +25,22 @@ function Topics() {
   return (
     <div>
       <h2>Topics</h2>
-      Topics...
+      <ul>
+        <li>
+          <NavLink to="1">HTML</NavLink>
+        </li>
+        <li>
+          <NavLink to="2">JS</NavLink>
+        </li>
+        <li>
+          <NavLink to="3">React</NavLink>
+        </li>
+      </ul>
+      <Routes>
+        <Route path="1" element={<TopicContent content="HTML is..." />} />
+        <Route path="2" element={<TopicContent content="JS is..." />} />
+        <Route path="3" element={<TopicContent content="React is..." />} />
+      </Routes>
     </div>
   );
 }
@@ -56,7 +79,7 @@ function App() {
       </ul>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/topics" element={<Topics />} />
+        <Route path="/topics/*" element={<Topics />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
@@ -66,9 +89,9 @@ function App() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <HashRouter>
+  <BrowserRouter>
     <App />
-  </HashRouter>,
+  </BrowserRouter>,
 );
 
 // If you want to start measuring performance in your app, pass a function
