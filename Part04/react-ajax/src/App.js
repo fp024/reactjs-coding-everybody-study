@@ -1,22 +1,9 @@
-import { Component, useState } from 'react';
+import { Component, useEffect, useState } from 'react';
 import './App.css';
 
 class Nav extends Component {
-  state = {
-    list: [],
-  };
-
-  componentDidMount() {
-    fetch('list.json')
-      .then((result) => result.json())
-      .then((json) => {
-        console.log(json);
-        this.setState({ list: json });
-      }); // 람다식이여서, bind(this)안해도 됨
-  }
-
   render() {
-    const listTag = this.state.list.map((li) => {
+    const listTag = this.props.navList.map((li) => {
       return (
         <li key={li.id}>
           <a
@@ -24,7 +11,6 @@ class Nav extends Component {
             data-id={li.id} // e.target.dataset.id 으로 접근하기 위해 설정
             onClick={(e) => {
               e.preventDefault();
-              console.log('trigger');
               this.props.onClick(e.target.dataset.id);
             }}
           >
@@ -50,12 +36,22 @@ class Article extends Component {
 }
 
 function App() {
+  const [navList, setNavList] = useState([]);
   const [article, setArticle] = useState({ title: 'Welcome', desc: 'Hello, React & Ajax' });
+
+  useEffect(() => {
+    fetch('list.json')
+      .then((result) => result.json())
+      .then((json) => {
+        setNavList(json);
+      });
+  }, []);
 
   return (
     <div className="App">
       <h1>WEB</h1>
       <Nav
+        navList={navList}
         onClick={(id) => {
           fetch(`${id}.json`)
             .then((response) => response.json())
