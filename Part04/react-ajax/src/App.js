@@ -3,7 +3,7 @@ import './App.css';
 
 class Nav extends Component {
   render() {
-    const listTag = this.props.navList.map((li) => {
+    const listTag = this.props.navList.items.map((li) => {
       return (
         <li key={li.id}>
           <a
@@ -35,30 +35,54 @@ class Article extends Component {
   }
 }
 
+function NowLoding() {
+  return (
+    <div>
+      <h2>Now Loading....</h2>
+    </div>
+  );
+}
+
 function App() {
-  const [navList, setNavList] = useState([]);
-  const [article, setArticle] = useState({ title: 'Welcome', desc: 'Hello, React & Ajax' });
+  const [navList, setNavList] = useState({ items: [], isLoading: false });
+  const [article, setArticle] = useState({
+    item: { title: 'Welcome', desc: 'Hello, React & Ajax' },
+    isLoading: false,
+  });
 
   useEffect(() => {
+    // const newList = Object.assign({}, navList.items, { isLoading: true });
+    // setNavList(newList);
+    setNavList({ items: [], isLoading: true });
     fetch('list.json')
       .then((result) => result.json())
       .then((json) => {
-        setNavList(json);
+        setNavList({ items: json, isLoading: false });
       });
   }, []);
 
   return (
     <div className="App">
       <h1>WEB</h1>
-      <Nav
-        navList={navList}
-        onClick={(id) => {
-          fetch(`${id}.json`)
-            .then((response) => response.json())
-            .then((json) => setArticle(json));
-        }}
-      />
-      <Article title={article.title} desc={article.desc} />
+      {navList.isLoading ? (
+        <NowLoding />
+      ) : (
+        <Nav
+          navList={navList}
+          onClick={(id) => {
+            setArticle({ item: article.item, isLoading: true });
+            fetch(`${id}.json`)
+              .then((response) => response.json())
+              .then((json) => setArticle({ item: json, isLoading: false }));
+          }}
+        />
+      )}
+
+      {article.isLoading ? (
+        <NowLoding />
+      ) : (
+        <Article title={article.item.title} desc={article.item.desc} />
+      )}
     </div>
   );
 }
