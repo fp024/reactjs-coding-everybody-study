@@ -69,7 +69,28 @@
 
 ---
 
-## 08.
+## 08. Redux - 5.2. Redux의 적용 : reducer와 action을 이용해서 새로운 state 값 만들기
+
+* https://youtu.be/6n4MCp4pI5A
+
+* 가장 중요한 부분
+
+  ```javascript
+  function reducer(state, action) {
+    console.log(state, action);
+    if (state == undefined) {
+      return { color: 'yellow' }; // 초기 state 값.
+    }
+    let newState;
+  
+    if (action.type === 'CHANGE_COLOR') {
+      newState = Object.assign({}, state, { color: 'red' }); // 기존 상태는 보존하고 새로 복사해서 리턴하게 한다., 가장 중요한 부준.
+    }
+    return newState;
+  }
+  ```
+
+  * state를 직접 수정하지 않고, 복사본을 만들어 그것의 상태를 바꾸고 반환한다.
 
 
 

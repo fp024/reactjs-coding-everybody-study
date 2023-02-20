@@ -23,9 +23,16 @@
     <div id="blue"></div>
     <script>
       function reducer(state, action) {
+        console.log(state, action);
         if (state == undefined) {
           return { color: 'yellow' }; // 초기 state 값.
         }
+        let newState;
+
+        if (action.type === 'CHANGE_COLOR') {
+          newState = Object.assign({}, state, { color: 'red' }); // 기존 상태는 보존하고 새로 복사해서 리턴하게 한다., 가장 중요한 부준.
+        }
+        return newState;
       }
 
       const store = Redux.createStore(reducer);
@@ -37,7 +44,7 @@
           <div class="container" id="component_red" style="background-color:${state.color}">
             <h1>red</h1>
             <input type="button" value="fire" onclick="
-              document.querySelector('#component_red').style.backgroundColor = 'red';
+              store.dispatch({type:'CHANGE_COLOR', color: 'red'});
             ">
           </div>
         `;
