@@ -55,7 +55,11 @@
             store.dispatch(action);
             "
             href="/create">create</a></li>
-          <li><input type="button" value="delete"></li>
+          <li><input onclick="
+            store.dispatch({
+              type:'DELETE'
+            })
+            " type="button" value="delete"></li>
         </ul>
         `;
       }
@@ -89,12 +93,22 @@
         `;
         } else if (state.mode === 'read') {
           const selectedArticle = state.contents.find((a) => a.id === state.selected_id);
-          document.querySelector('#content').innerHTML = `
-        <article>    
-          <h2>${selectedArticle.title}</h2>
-          ${selectedArticle.desc}
-        </article>
-        `;
+
+          if (selectedArticle == null) {
+            document.querySelector('#content').innerHTML = `
+            <article>    
+              <h2>Data Empty</h2>
+              ...              
+            </article>
+            `;
+          } else {
+            document.querySelector('#content').innerHTML = `
+            <article>    
+              <h2>${selectedArticle.title}</h2>
+              ${selectedArticle.desc}
+            </article>
+            `;
+          }
         }
       }
 
@@ -118,14 +132,25 @@
           newState = Object.assign({}, state, { mode: action.mode });
         } else if (action.type === 'CREATE') {
           const newMaxId = state.max_id + 1;
-          const newContents = state.contents.concat({
+          const newContent = {
             id: newMaxId,
             title: action.title,
             desc: action.desc,
-          });
+          };
 
           newState = Object.assign({}, state, {
-            max_id: newMaxId,
+            max_id: newContent.id,
+            selected_id: newContent.id,
+            contents: state.contents.concat(newContent),
+            mode: 'read',
+          });
+        } else if (action.type === 'DELETE') {
+          const newContents = state.contents.filter((c) => c.id != state.selected_id);
+          const newSelectedId =
+            newContents.length === 0 ? null : newContents[newContents.length - 1].id;
+
+          newState = Object.assign({}, state, {
+            selected_id: newSelectedId,
             contents: newContents,
             mode: 'read',
           });
