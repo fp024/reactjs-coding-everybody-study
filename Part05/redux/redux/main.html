@@ -28,7 +28,14 @@
         const state = store.getState();
         const lisHTML = state.contents
           .map((article) => {
-            return `<li><a href="${article.id}.html">${article.title}</a></li>`;
+            return `
+            <li>
+              <a onclick="
+                event.preventDefault();
+                const action = {type:'SELECT', id: ${article.id}};
+                store.dispatch(action);
+              " href="${article.id}.html">${article.title}</a>
+            </li>`;
           })
           .join('');
         document.querySelector('#toc').innerHTML = `
@@ -60,12 +67,21 @@
       function reducer(state, action) {
         if (state == undefined) {
           return {
+            selected_id: null,
             contents: [
               { id: 1, title: 'HTML', desc: 'HTML is ...' },
               { id: 2, title: 'CSS', desc: 'CSS is ...' },
             ],
           };
         }
+
+        let newState = {};
+        if (action.type === 'SELECT') {
+          newState = Object.assign({}, state, { selected_id: action.id });
+        }
+
+        console.log(action, state, newState);
+        return newState;
       }
 
       const store = Redux.createStore(

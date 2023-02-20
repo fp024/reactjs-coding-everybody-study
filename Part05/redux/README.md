@@ -33,7 +33,11 @@
 
 ---
 
-## 14.
+## 14. Redux - 7.4. 실전 Redux : action을 dispatch를 통해서 전달하기
+
+* https://youtu.be/ldxFOG4GfLk
+* nav의 목록 클릭시 현재 선택한 목록 id를 redux에서 관리하도록 설정
+* action 타입으로 SELECT 정의
 
 
 
