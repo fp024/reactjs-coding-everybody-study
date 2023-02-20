@@ -75,9 +75,16 @@
 
 ---
 
-## 07.
+## 07. Redux - 5.1. Redux의 적용 : store 생성
 
+* https://youtu.be/8EhmwDKSeJQ
+* Redux 공식 홈페이지
+  * https://redux.js.org/
+* Redux CDN
+  * https://cdnjs.com/libraries/redux
 
+* Redux를 사용해서 store를 생성하고 state값을 설정하고 그것을 사용하게 함.
+  * [redux/with-redux.html](redux/with-redux.html)
 
 ---
 
