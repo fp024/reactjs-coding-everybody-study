@@ -54,7 +54,8 @@
 ## 11. Redux - 7.1. 실전 Redux : 정적인 웹페이지 만들기
 
 * https://youtu.be/MqdUNIWMhbc
-
+* 정적 페이지 작성
+  * [redux/main.html](redux/main.html)
 
 
 
@@ -209,5 +210,4 @@
     * 다른 영상인데.. 설명을 아주 쉽게 잘했다. 👍
 
 
-  
 
