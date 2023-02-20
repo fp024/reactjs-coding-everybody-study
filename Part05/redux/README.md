@@ -39,7 +39,10 @@
 
 ---
 
-## 13.
+## 13. Redux - 7.3. 실전 Redux : store 생성과 state 사용하기
+
+* https://youtu.be/NK7p71gDVTU
+* TOC의 정보를 Redux로 관리
 
 
 
