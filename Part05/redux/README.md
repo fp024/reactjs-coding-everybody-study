@@ -45,7 +45,11 @@
 
 ---
 
-## 12.
+## 12. Redux - 7.2. 실전 Redux : 부품화
+
+* https://youtu.be/HmOSizB0vKw
+* 정적 페이지에서 각 요소 부품화
+  * [redux/main.html](redux/main.html)
 
 
 
