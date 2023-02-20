@@ -6,7 +6,7 @@
 
 * 프로젝트 디렉토리: [react-ajax](react-ajax)
 
-* 동영상 강의: https://youtu.be/uTha6v0HQqc
+* 동영상 강의: https://www.youtube.com/watch?v=ReKQ8k4w2i4
 
    
 
