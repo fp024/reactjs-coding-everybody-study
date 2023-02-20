@@ -9,7 +9,11 @@
 
 ---
 
-## 18.
+## 18. Redux - 8. 수업을 마치며
+
+* https://youtu.be/dRcahbiS5zk
+* React는 Redux와 단짝!
+* 현재는 독립적인 상태관리 라이브러리로 발전
 
 
 
