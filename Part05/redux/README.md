@@ -21,7 +21,12 @@
 
 ---
 
-## 16.
+## 16. Redux - 7.6. 실전 Redux : 글생성 기능 구현
+
+* https://youtu.be/Ah_-BUs4uW8
+* 영상에서는 CHANGE_MODE 대한 언급이 없었던 것 같은데.. .
+  * 저자님 작성하신 소스코드 좀 참고 했다... 
+    * https://github.com/egoing/redux-tutorial-example/blob/master/main.html
 
 
 
