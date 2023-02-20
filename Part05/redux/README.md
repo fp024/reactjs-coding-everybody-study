@@ -57,7 +57,23 @@
 
 ---
 
-## 10.
+## 10. Redux - 6. Redux 선물 : 시간여행과 로깅
+
+* https://youtu.be/dNPyoHW1A8A
+
+* Redux Dev Tools 재생이 안되서 보니...
+
+  ```javascript
+    const store = Redux.createStore(
+      reducer,
+      /* preloadedState, */ window.__REDUX_DEVTOOLS_EXTENSION__ &&
+        window.__REDUX_DEVTOOLS_EXTENSION__(),
+    );
+  ```
+
+  * 두번째 인자로 옵션을 더 전달해줘야함. 😓
+  * https://github.com/reduxjs/redux-devtools/tree/main/extension#11-basic-store
+  * 붐비치 게임리플레이가 이런식으로 되어있을 것 같음
 
 
 

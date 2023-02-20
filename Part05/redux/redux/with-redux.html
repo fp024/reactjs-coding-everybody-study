@@ -32,10 +32,16 @@
         if (action.type === 'CHANGE_COLOR') {
           newState = Object.assign({}, state, { color: action.color }); // 기존 상태는 보존하고 새로 복사해서 리턴하게 한다., 가장 중요한 부준.
         }
+        console.log(action.type, action, state, newState);
         return newState;
       }
 
-      const store = Redux.createStore(reducer);
+      const store = Redux.createStore(
+        reducer,
+        /* preloadedState, */ window.__REDUX_DEVTOOLS_EXTENSION__ &&
+          window.__REDUX_DEVTOOLS_EXTENSION__(),
+      );
+
       console.log(store.getState());
 
       function red() {
