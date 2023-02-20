@@ -27,7 +27,11 @@
 
 ---
 
-## 15.
+## 15. Redux - 7.5. 실전 Redux : subscribe를 통해서 자동 갱신 되도록 처리
+
+* https://youtu.be/zMTqWoe25aU
+* 현재 선택된 항목에 따라 article 변경
+  * article의 갱신은 subscribe()에 article()함수 등록
 
 
 

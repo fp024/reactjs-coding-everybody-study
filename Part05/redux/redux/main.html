@@ -56,10 +56,12 @@
       }
 
       function article() {
+        const state = store.getState();
+        const selectedArticle = state.contents.find((a) => a.id === state.selected_id);
         document.querySelector('#content').innerHTML = `
         <article>    
-          <h2>HTML</h2>
-          HTML is ...
+          <h2>${selectedArticle.title}</h2>
+          ${selectedArticle.desc}
         </article>
         `;
       }
@@ -67,7 +69,7 @@
       function reducer(state, action) {
         if (state == undefined) {
           return {
-            selected_id: null,
+            selected_id: 1,
             contents: [
               { id: 1, title: 'HTML', desc: 'HTML is ...' },
               { id: 2, title: 'CSS', desc: 'CSS is ...' },
@@ -89,6 +91,7 @@
         /* preloadedState, */ window.__REDUX_DEVTOOLS_EXTENSION__ &&
           window.__REDUX_DEVTOOLS_EXTENSION__(),
       );
+      store.subscribe(article);
 
       subject();
       TOC();
