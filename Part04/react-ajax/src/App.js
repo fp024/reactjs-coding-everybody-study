@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, useState } from 'react';
 import './App.css';
 
 class Nav extends Component {
@@ -19,7 +19,17 @@ class Nav extends Component {
     const listTag = this.state.list.map((li) => {
       return (
         <li key={li.id}>
-          <a href={li.id}>{li.title}</a>
+          <a
+            href={li.id}
+            data-id={li.id} // e.target.dataset.id 으로 접근하기 위해 설정
+            onClick={(e) => {
+              e.preventDefault();
+              console.log('trigger');
+              this.props.onClick(e.target.dataset.id);
+            }}
+          >
+            {li.title}
+          </a>
         </li>
       );
     });
@@ -28,15 +38,31 @@ class Nav extends Component {
   }
 }
 
+class Article extends Component {
+  render() {
+    return (
+      <article>
+        <h2>{this.props.title}</h2>
+        {this.props.desc}
+      </article>
+    );
+  }
+}
+
 function App() {
+  const [article, setArticle] = useState({ title: 'Welcome', desc: 'Hello, React & Ajax' });
+
   return (
     <div className="App">
       <h1>WEB</h1>
-      <Nav></Nav>
-      <article>
-        <h2>Welcome</h2>
-        Hello, React &amp; Ajax
-      </article>
+      <Nav
+        onClick={(id) => {
+          fetch(`${id}.json`)
+            .then((response) => response.json())
+            .then((json) => setArticle(json));
+        }}
+      />
+      <Article title={article.title} desc={article.desc} />
     </div>
   );
 }
