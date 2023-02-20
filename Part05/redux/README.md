@@ -63,9 +63,13 @@
 
 ---
 
-## 09.
+## 09. Redux - 5.3. Redux의 적용 : state의 변화에 따라서 UI 반영하기
 
+* https://youtu.be/SnND3Fj3eJc
 
+* state 변경시 랜더링을 위해 subscribe() 함수에 컴포넌트 랜더링 함수(red(), blue(), green() 같은..) 등록
+
+  
 
 ---
 
