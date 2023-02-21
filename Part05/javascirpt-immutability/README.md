@@ -9,7 +9,14 @@
 ## 12.
 
 ---
-## 11.
+## 11. JavaScript immutability - 7. const vs object freeze
+
+* https://youtu.be/ol239ZUGwHg
+* [const-vs-freeze.js](js-immutability/const-vs-freeze.js)
+* const : 이름을 규제
+* freeze: 값을 규제
+
+
 
 ---
 ## 10. JavaScript immutability - 6. Object freeze로 객체를 불변하게 만들기
