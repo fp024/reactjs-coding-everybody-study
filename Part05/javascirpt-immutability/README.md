@@ -6,7 +6,21 @@
 * 연습 프로젝트: [js-immutability](js-immutability)
 
 ---
-## 12.
+## 12. JavaScript immutability - 8. 수업을 마치며
+
+* https://youtu.be/6xRhsyoz0M4
+* 불변함이 가변함을 뛰어넘는 발전된 개념이라고 오해하지 말것..
+  * 그냥 가변함의 문제를 완화하기 위한... 개념으로 생각하는 것이 좋음. 가변함이 나쁜것은 아님.
+* 함수형 프로그래밍
+  * 함수를 부품으로 사용하는 프로그래밍 패러다임
+  * 같은 입력에 대해 같은 결과 반환
+  * 함수가 순수한 상태를 유지해야함
+* IMMUTABLE 라이브러리
+  * https://immutable-js.com/
+  * https://immerjs.github.io/immer/
+  * https://swannodette.github.io/mori/
+
+
 
 ---
 ## 11. JavaScript immutability - 7. const vs object freeze
