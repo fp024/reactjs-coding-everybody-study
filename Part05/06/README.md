@@ -46,7 +46,7 @@
 
 * 동영상 강의: https://youtu.be/Q1CmuPDUK3Q
 
-* 
+* https://react-redux.js.org/using-react-redux/connect-mapstate
 
 
 

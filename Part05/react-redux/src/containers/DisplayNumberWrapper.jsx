@@ -1,7 +1,17 @@
 import DisplayNumber from '../components/DisplayNumber';
 import { connect } from 'react-redux';
 
-export default connect()(DisplayNumber); // 자동 Wrapping 해서 반환
+function mapReduxStateToProps(state) {
+  return {
+    number: state.number,
+  };
+}
+
+function mapReduxDispatchToProps() {
+  return {};
+}
+
+export default connect(mapReduxStateToProps, mapReduxDispatchToProps)(DisplayNumber); // 자동 Wrapping 해서 반환
 
 /*
 import { useEffect, useState } from 'react';
