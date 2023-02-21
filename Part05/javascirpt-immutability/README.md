@@ -21,7 +21,12 @@
 ## 08.
 
 ---
-## 07.
+## 07. JavaScript immutability - 3.4. 중첩된 객체의 복사
+
+* https://youtu.be/HN1-5v81Fzc
+* 중첩된 객체의 참조가 복사되고 값자체가 복사되진 않는다.
+
+
 
 ---
 ## 06. JavaScript immutability - 3.3. 객체의 복사
