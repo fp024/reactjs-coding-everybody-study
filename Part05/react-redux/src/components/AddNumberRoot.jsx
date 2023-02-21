@@ -1,10 +1,14 @@
 import AddNumber from './AddNumber';
 
-function AddNumberRoot() {
+function AddNumberRoot(props) {
   return (
     <div>
       <h1>Add Number Root</h1>
-      <AddNumber></AddNumber>
+      <AddNumber
+        onClick={(size) => {
+          props.onClick(size);
+        }}
+      ></AddNumber>
     </div>
   );
 }
