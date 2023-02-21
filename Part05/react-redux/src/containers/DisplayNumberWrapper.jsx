@@ -7,11 +7,7 @@ function mapReduxStateToProps(state) {
   };
 }
 
-function mapReduxDispatchToProps() {
-  return {};
-}
-
-export default connect(mapReduxStateToProps, mapReduxDispatchToProps)(DisplayNumber); // 자동 Wrapping 해서 반환
+export default connect(mapReduxStateToProps)(DisplayNumber); // 자동 Wrapping 해서 반환
 
 /*
 import { useEffect, useState } from 'react';

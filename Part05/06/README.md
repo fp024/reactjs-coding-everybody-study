@@ -48,24 +48,45 @@
 
 * https://react-redux.js.org/using-react-redux/connect-mapstate
 
+* Redux의 state를 React의 Props에 매핑
 
+  * subscribe()까지 자동으로 함..
+
+  * DispayNumberWrapper.js에서 주석으로 바꾼 내용을 알아서 하는 걸로 보면 될 것 같음.
+
+    ```javascript
+    
+    /*
+    import { useEffect, useState } from 'react';
+    import store from '../store';
+    
+    export default function DisplayNumberWrapper() {
+      const [number, setNumber] = useState(store.getState().number); // 상태도 자동으로? 
+    
+      useEffect(() => {  // 구독도 자동처리...
+        store.subscribe(() => {
+          setNumber(store.getState().number);
+        });
+      }, []);
+    
+      return <DisplayNumber number={number}></DisplayNumber>; // props에 매핑
+    }
+    */
+    ```
+
+    
 
 ### react-redux – mapDispatchToProps
 
 * 동영상 강의: https://youtu.be/V0MDQmNgcYw
-
-
-
-
-
-
+* Redux의 dispatch함수를 React의 Props에 매핑
 
 
 
 
 ## 의견
 
-* 
+* 확실히 마법이 많다 값자기 어려워진 것 같은... 😂😂😂
 
   
 
