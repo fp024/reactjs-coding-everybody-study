@@ -13,7 +13,7 @@ export default connect(mapReduxStateToProps)(DisplayNumber); // 자동 Wrapping 
 import { useEffect, useState } from 'react';
 import store from '../store';
 
-export default function DisplayNumberWrapper() {
+export default function DisplayNumberWrapper(props) {
   const [number, setNumber] = useState(store.getState().number); // state의 초기값도 store에서 설정한 내용을 받아오면 됨.
 
   // constructor에 있던 부분을 useEffect로 옮김 - componentDidMount()
@@ -23,6 +23,6 @@ export default function DisplayNumberWrapper() {
     });
   }, []);
 
-  return <DisplayNumber number={number}></DisplayNumber>;
+  return <DisplayNumber number={number} unit={props.unit}></DisplayNumber>;
 }
 */
