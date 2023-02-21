@@ -1,6 +1,6 @@
-import AddNumber from './AddNumber';
+import AddNumber from '../containers/AddNumberWrapper';
 
-function AddNumberRoot(props) {
+export default function AddNumberRoot(props) {
   return (
     <div>
       <h1>Add Number Root</h1>
@@ -8,5 +8,3 @@ function AddNumberRoot(props) {
     </div>
   );
 }
-
-export default AddNumberRoot;

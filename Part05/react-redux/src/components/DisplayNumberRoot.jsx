@@ -1,6 +1,6 @@
-import DisplayNumber from './DisplayNumber';
+import DisplayNumber from '../containers/DisplayNumberWrapper';
 
-function DisplayNumberRoot(props) {
+export default function DisplayNumberRoot(props) {
   return (
     <div>
       <h1>Display Number Root</h1>
@@ -8,5 +8,3 @@ function DisplayNumberRoot(props) {
     </div>
   );
 }
-
-export default DisplayNumberRoot;
