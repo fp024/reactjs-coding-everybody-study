@@ -30,10 +30,21 @@
 ## 05.
 
 ---
-## 04.
+## 04. JavaScript immutability - 3.1. 초기 값의 비교
+
+* https://youtu.be/z19d22-FO-s
+* 원시 값은 메모리 상의 같은 곳을 가리킴
+  * 메모리에 올라간 원시 값은 변경되지 않는 불변 특성
+* 두개의 서로 다른 객체형은 메모리에 새로 생성
+
+
 
 ---
-## 03.
+## 03. JavaScript immutability - 3.0. 변수 할당 방식 비교
+
+* https://youtu.be/odymmcPGAWc
+
+
 
 ---
 ## 02. JavaScript Immutability - 2. 이름에 대한 불변함 : const vs var
