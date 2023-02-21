@@ -12,7 +12,14 @@
 ## 11.
 
 ---
-## 10.
+## 10. JavaScript immutability - 6. Object freeze로 객체를 불변하게 만들기
+
+* https://youtu.be/J0R1D2_WHnc
+* [object-freeze.js](js-immutability/object-freeze.js)
+* 못바꾸게 얼려버림😄, freeze푸는 명령 없음, 풀려면 복제해서 풀어야함.
+* 없던 프로퍼티를 추가한 것에 대해서는 ...
+
+
 
 ---
 ## 09. JavaScript immutability - 5. 가변과 불변 API 비교
