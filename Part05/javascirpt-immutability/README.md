@@ -18,7 +18,12 @@
 ## 09.
 
 ---
-## 08.
+## 08. JavaScript immutability - 4. 불변의 함수 만들기
+
+* https://youtu.be/unxK9p6G7YE
+* [make-immutable-func.js](js-immutability/make-immutable-func.js)
+
+
 
 ---
 ## 07. JavaScript immutability - 3.4. 중첩된 객체의 복사
