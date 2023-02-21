@@ -24,14 +24,21 @@
 ## 07.
 
 ---
-## 06.
+## 06. JavaScript immutability - 3.3. 객체의 복사
+
+* https://youtu.be/Zm2r5cOFrVU
+* Object.assign() 함수 사용해서 객체 복사
+
+
 
 ---
 ## 05. JavaScript immutability - 3.2. 객체의 가변성
 
 * https://youtu.be/fDJG4CjbB3A
 
+* 원시 타입은 필요할 때까지는 새로 메모리에 올리지 않음
 
+  
 
 ---
 ## 04. JavaScript immutability - 3.1. 초기 값의 비교
