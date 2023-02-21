@@ -15,7 +15,12 @@
 ## 10.
 
 ---
-## 09.
+## 09. JavaScript immutability - 5. 가변과 불변 API 비교
+
+* https://youtu.be/ekCb6ta9AW0
+* [comparison-of-mutable-and-immutable-APIs.js](js-immutability/comparison-of-mutable-and-immutable-APIs.js)
+
+
 
 ---
 ## 08. JavaScript immutability - 4. 불변의 함수 만들기
