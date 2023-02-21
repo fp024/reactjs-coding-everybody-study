@@ -1,4 +1,9 @@
 import DisplayNumber from '../components/DisplayNumber';
+import { connect } from 'react-redux';
+
+export default connect()(DisplayNumber); // 자동 Wrapping 해서 반환
+
+/*
 import { useEffect, useState } from 'react';
 import store from '../store';
 
@@ -14,3 +19,4 @@ export default function DisplayNumberWrapper() {
 
   return <DisplayNumber number={number}></DisplayNumber>;
 }
+*/
