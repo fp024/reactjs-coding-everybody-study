@@ -27,7 +27,11 @@
 ## 06.
 
 ---
-## 05.
+## 05. JavaScript immutability - 3.2. 객체의 가변성
+
+* https://youtu.be/fDJG4CjbB3A
+
+
 
 ---
 ## 04. JavaScript immutability - 3.1. 초기 값의 비교
