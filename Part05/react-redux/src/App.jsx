@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import AddNumberRoot from './components/AddNumberRoot';
 import DisplayNumberRoot from './components/DisplayNumberRoot';
 import './App.css';
