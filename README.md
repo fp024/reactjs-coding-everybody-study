@@ -5,13 +5,13 @@
 ### 교제
 
 * yes24
-
-  * http://www.yes24.com/Product/Goods/98551057
+  * https://www.yes24.com/Product/Goods/98551057
 
 * 교보문고
+  * https://product.kyobobook.co.kr/detail/S000001766458
 
-  * http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9791158392376
-
+* 알라딘
+  * https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=267362760
   
 
 ### 동영상 강의
