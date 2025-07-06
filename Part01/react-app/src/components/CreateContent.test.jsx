@@ -64,10 +64,10 @@ describe('CreateContent', () => {
     expect(mockOnSubmit).toHaveBeenCalledTimes(1);
 
     // 테스트가 끝나면 모의했던 속성을 원래대로 복원 (선택 사항이지만 좋은 습관)
-    if (formElement && Object.prototype.hasOwnProperty.call(formElement, 'title')) {
+    if (formElement && Object.hasOwn(formElement, 'title')) {
       delete formElement.title;
     }
-    if (formElement && Object.prototype.hasOwnProperty.call(formElement, 'desc')) {
+    if (formElement && Object.hasOwn(formElement, 'desc')) {
       delete formElement.desc;
     }
   });
