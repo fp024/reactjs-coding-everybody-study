@@ -1,0 +1,9 @@
+onlyBuiltDependencies:
+  - esbuild
+
+packages:
+  - 'Part01/react-app'
+  - 'Part02/react-func-class-style-coding'
+  - 'Part03/react-router-dom-example'
+  - 'Part04/react-ajax'
+  - 'Part05/react-redux'

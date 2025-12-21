@@ -9,9 +9,19 @@ echo "Deleting all node_modules directories under: $ROOT_DIR"
 # 디렉토리 확인을 위해 일시 정지
 read -p "Press any key to continue..."
 
-# 모든 하위 프로젝트의 node_modules 폴더를 삭제합니다
-find "$ROOT_DIR" -type d -name "node_modules" -print -exec rm -rf {} +
+# 루트 디렉토리의 node_modules와 그 하위 모든 폴더는 제외하고 삭제합니다
+find "$ROOT_DIR" -type d -name "node_modules" | while read -r dir; do
+    # 루트 디렉토리에서의 상대 경로 계산
+    rel_path="${dir#$ROOT_DIR/}"
+    
+    # 루트의 node_modules로 시작하는 경로는 건너뛰기
+    if [[ "$rel_path" == node_modules* ]]; then
+        echo "Skipping $dir as it is under root level node_modules"
+    else
+        echo "Deleting $dir"
+        rm -rf "$dir"
+    fi
+done
 
 # 완료 후 일시 정지
 read -p "Press any key to exit..."
-

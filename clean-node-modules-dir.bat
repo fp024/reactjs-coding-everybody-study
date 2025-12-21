@@ -1,5 +1,5 @@
 @echo off
-setlocal
+setlocal enabledelayedexpansion
 
 REM 현재 파일의 위치를 루트 디렉터리로 설정
 set "ROOT_DIR=%~dp0"
@@ -14,8 +14,18 @@ set /p dummyVar=""
 REM 모든 하위 프로젝트의 node_modules 폴더를 삭제합니다
 for /r "%ROOT_DIR%" %%d in (node_modules) do (
     if exist "%%d" (
-        echo Deleting %%d
-        rd /s /q "%%d"
+        REM 현재 디렉토리에서의 상대 경로를 계산
+        set "REL_PATH=%%d"
+        set "REL_PATH=!REL_PATH:%ROOT_DIR%=!"
+
+        REM 루트 디렉토리의 node_modules와 그 하위 모든 폴더는 제외
+        echo !REL_PATH! | findstr /b "node_modules" >nul
+        if errorlevel 1 (
+            echo Deleting %%d
+            rd /s /q "%%d"
+        ) else (
+            echo Skipping %%d as it is under root level node_modules
+        )
     )
 )
 

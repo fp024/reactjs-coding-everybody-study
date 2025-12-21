@@ -39,6 +39,46 @@
 
 
 
+## 프로젝트 관리
+
+* 일괄 설치
+
+  ```sh
+  # 프로젝트 루트에서 실행
+  pnpm run install-all
+  ```
+
+* 라이브러리 일괄 버전업
+
+  ```sh
+  # 프로젝트 루트에서 실행
+  pnpm run update-all
+  ```
+
+  > ✨ 개별 챕터 프로젝트마다 버전 업데이트 하는게 상당히 귀찮은 일이였는데, pnpm 워크스페이스로 하위 프로젝트를 묶으니 엄청나게 간편해졌다.
+
+
+* 프로젝트 실행 
+
+  ```sh
+  # 해당 폴더로 이동해서 실행
+  cd Part01/react-app
+  pnpm run dev
+  ```
+
+  ```sh
+  # 프로젝트 루트에서 실행 (package.json의 name 기반)
+  pnpm --filter part01-react-app run dev
+  ```
+
+* 프로젝트 코드 전체 포맷팅
+
+  ```sh
+  # 프로젝트 루트에서 실행
+  pnpm run format
+  ```
+
+  
 
 
 ## 의견

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -16,25 +16,25 @@
       type="button"
       value="fetch"
       onclick="
-    const type = document.querySelector('input[name=type]:checked').value;
-    /*
+        const type = document.querySelector('input[name=type]:checked').value;
+        /*
     fetch(type).then((response)=>{
       response.text().then((text)=>{
         document.querySelector('article').innerHTML = text;
       })
     })    
     */
-    fetch(type, {
-       cache:'no-store' // 최초 호출 이후에는 304가 되는데, 캐시 설정을 no-store로 바꾸면 200으로 설정된다.
-    }).then(function (response) {
-      console.log(response);
-      if(response.status == '404') {
-        alert('File Not Found');
-      }
-    });
-    console.log('1');
-    console.log('2');
-    "
+        fetch(type, {
+          cache: 'no-store', // 최초 호출 이후에는 304가 되는데, 캐시 설정을 no-store로 바꾸면 200으로 설정된다.
+        }).then(function (response) {
+          console.log(response);
+          if (response.status == '404') {
+            alert('File Not Found');
+          }
+        });
+        console.log('1');
+        console.log('2');
+      "
     />
   </body>
 </html>

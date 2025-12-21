@@ -1,0 +1,13 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - ˈdʒɑːvəˌskrɪpt
+  - esbuild
+  - Polyrepo
+  - reactjs
+  - speicification
+  - Turborepo
+ignoreWords: []
+import: []
