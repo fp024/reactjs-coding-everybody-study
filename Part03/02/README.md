@@ -33,8 +33,22 @@
 > npm install react-router-dom
 ```
 
+* v7부터 react-router와 react-router-dom이 하나로 통합되었다고 함.
+  현재는 react-router만 설치하는 것이 추천된다.
+  (현재 프로젝트가 pnpm으로 전환되어있어서 pnpm 명령으로 바꿈)
+```bash
+> pnpm install react-router
+```
 
-
+모듈 import 선언도 변경해야함.
+- 기존
+  ```jsx
+  import { BrowserRouter, Route, Routes, NavLink, useParams } from 'react-router-dom';
+  ```
+- 변경
+  ```jsx
+  import { BrowserRouter, Route, Routes, NavLink, useParams } from 'react-router';
+  ```
 
 
 ## 의견

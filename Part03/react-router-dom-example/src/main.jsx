@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import { BrowserRouter, Route, Routes, NavLink, useParams } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, NavLink, useParams } from 'react-router';
 
 const contents = [
   { id: 1, title: 'HTML', description: 'HTML is...' },
